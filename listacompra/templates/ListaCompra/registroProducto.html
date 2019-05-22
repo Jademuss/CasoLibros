@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RegistrarProducto</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'styles/menu.css' %}"/>
+        <link rel="stylesheet" href="{% static 'styles/formularioProducto.css' %}"/>
+        <link rel="stylesheet" href="{% static 'styles.css' %}"/>
+        <link href="https://file.myfontastic.com/F3EYbr2mgJRrppNqNEXyEM/icons.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="menu-container">            
+            <a id="ref" href="{% url 'index' %}"><span class="icon-shop"></span></a>
+            <label id="btn-menu" class="icon-bars"></label>
+            <nav id="navegador">
+                <ul>
+                    {% if user.is_anonymous %} 
+                    <li><a href="{% url 'login' %}" class="item-link">Iniciar Sesion</a></li>       
+                    {% endif %}    
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'index' %}" class="item-link">Inicio</a></li>
+                    <li><a href="{% url 'listaProducto' %}" class="item-link">Lista Productos</a></li>
+                    <li><a href="{% url 'logout' %}" class="item-link">Cerrar Sesion</a></li>
+                    {% endif %}   
+                    {% if user.is_superuser %}
+                    <li><a href="{% url 'registroProducto' %}" class="item-link">Registrar Producto</a></li>
+                                       
+                    <li><a href="/admin/login/?next=/admin/" class="item-link">Administracion</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+
+        <div class="formulario-container">
+            <div class="titulo">
+                <h1>Ingresar Producto</h1>
+            </div>    
+            <form action="{% url 'registroProducto' %}" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                <div class="form-item">
+                    <label for="{{ form.message.nombre}}">Nombre Libro:</label>
+                    {{ form.nombre }}
+                </div>
+                
+                <div class="form-item">
+                    <label for="{{ form.message.image_producto}}">Imagen Producto:</label>
+                    {{ form.image_producto }}
+                </div>
+
+                <div class="form-item">
+                    <label for="{{ form.message.costo_presupuestado}}">Precio:</label>
+                    {{ form.precio }}
+                </div>               
+
+                <div class="form-item">
+                    <label for="{{ form.message.notas}}">Descripcion:</label>
+                    {{ form.descripcion }}
+                </div>
+
+                <div class="form-button">
+                    <button type="submit" value="Submit">Registrar</button>
+                </div>
+            </form>
+        </div>
+
+
+
+        <script src="{% static 'js/javamenu.js' %}"></script>
+    </body>

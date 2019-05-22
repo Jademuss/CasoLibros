@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ListaCompra</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'styles/menu.css' %}"/>
+        <link rel="stylesheet" href="{% static 'styles/listaProducto.css' %}"/>
+        <link rel="stylesheet" href="{% static 'styles.css' %}"/>
+        <link href="https://file.myfontastic.com/F3EYbr2mgJRrppNqNEXyEM/icons.css" rel="stylesheet">
+    </head>
+
+        <body>
+            <div class="menu-container">
+                <a id="ref" href="{% url 'index' %}"><span class="icon-shop"></span></a>
+                <label id="btn-menu" class="icon-bars"></label>
+                <nav id="navegador">
+                    <ul>
+                        {% if user.is_anonymous %} 
+                    <li><a href="{% url 'login' %}" class="item-link">Iniciar Sesion</a></li>       
+                    {% endif %}    
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'index' %}" class="item-link">Inicio</a></li>
+                    <li><a href="{% url 'listaProducto' %}" class="item-link">Lista Productos</a></li>
+                    <li><a href="{% url 'logout' %}" class="item-link">Cerrar Sesion</a></li>
+                    {% endif %}   
+                    {% if user.is_superuser %}
+                    <li><a href="{% url 'registroProducto' %}" class="item-link">Registrar Producto</a></li>
+                                       
+                    <li><a href="/admin/login/?next=/admin/" class="item-link">Administracion</a></li>
+                    {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+        <div class="flex-container">
+			{% if lista_de_productos %}
+            {% for producto in lista_de_productos %}  
+			<div class="item-list">
+				<div class="item-list-img">
+					<a href="{% url 'detalleProducto' pk=producto.pk %} "> 
+                    {% if producto.image_producto %}  
+						<img src="{{ producto.image_producto.url }}" alt="">
+                    {% endif %}    
+					</a>
+				</div>
+				<div class="item-list-info">
+				  
+					<div class="item-list-data">Nombre Libro:</div>
+					<div class="item-list-data">
+						<p id="height">{{  producto.nombre  }}</p>
+                    </div>
+                    <div class="item-list-data">Precio:</div>
+                    <div class="item-list-data">
+                            <p id="height">${{ producto.precio  }}</p>
+                    </div>                     
+                    <div class="item-list-data">Descripcion:</div>
+                    <div class="item-list-data">
+                            <p id="height">{{ producto.descripcion  }}</p>
+                    </div>
+                    
+                    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="EJZ3SYBFB467A">
+                        <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_cart_LG.gif"  name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt=""src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+
+                    
+                            
+                        
+                                     
+                    
+				</div>
+			</div>
+			{% endfor %}  
+			{% else %}   
+			<h2>Lo sentimos, no hay ningun producto disponible</h2>
+			{% endif %}        
+		</div>
+
+        <script src="{% static 'js/javamenu.js' %}"></script>
+    </body>
