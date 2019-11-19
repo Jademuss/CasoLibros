@@ -1,0 +1,248 @@
+#registro{
+	width: 550px;
+    height: 100%;
+    margin: 100px auto 50px auto;
+    padding: 20px;
+    position: relative;
+    background: #fff url(data:image/png;base64,iVBORw0K[...]CYII=);
+    border: 1px solid #ccc;
+    border-radius: 3px;  
+}
+
+#registro::before, 
+#registro::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 2px;
+    right: 2px;
+    top: 0;
+    z-index: -1;
+    background: #fff;
+    border: 1px solid #ccc;         
+}
+
+#registro::after {
+    left: 4px;
+    right: 4px;
+    bottom: -5px;
+    z-index: -2;
+	box-shadow: 0 8px 8px -5px rgba(0,0,0,.3);
+	
+}
+
+#registro h1 {
+    position: relative;
+    font: italic 1em/3.5em 'trebuchet MS',Arial, Helvetica;
+    color: #999;
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+#registro h1::before,
+#registro h1::after{
+    content:'';
+    position: absolute;
+    border: 1px solid rgba(0,0,0,.15);
+    top: 10px;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+
+#registro h1::after{
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+}
+
+
+
+
+
+::-webkit-input-placeholder {
+	color: #bbb;
+ }
+ 
+ :-moz-placeholder {
+	color: #bbb;
+ }                       
+ 
+ .placeholder{
+	 color: #bbb;
+ }  
+ 
+ #registro input[type="radio"]{
+	margin: 15px ;
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 10%;
+	padding: 15px
+ }
+
+ #registro select {
+	background: transparent;
+	border: none;
+	font-size: 14px;
+	height: 30px;
+	padding: 5px;
+	width: 250px;
+	
+ }
+ #registro select:focus{ outline: none;}
+
+ #registro .caja {
+	margin:5px auto 10	px auto;	
+	border:1px solid #d9d9d9;
+	height:30px;
+	overflow: hidden;
+	width: 250px;
+	position:relative;
+ }
+
+ #registro .caja::after{
+	content:"\025be";
+	display:table-cell;
+	padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color:#d9d9d9;
+	position:absolute;
+	top:0;
+	right:0px;	
+	pointer-events: none;
+}
+ 
+ #registro input {
+	 margin: 2px ;
+	 padding: 15px;
+	 width: 100%;
+	 *width: 518px; 
+	 box-sizing: border-box;
+	 border: px solid #ccc;
+	 border-radius: 40px; 
+ }
+
+
+
+	
+
+ 
+ #registro input:focus{
+		 outline: 0;
+		 border-color: #aaa;
+	 box-shadow: 0 2px 1px rgba(0, 0, 0, .3) inset;
+ }       
+ 
+ #registro button {
+	 margin: 20px 0 0 0;
+	 padding: 15px 8px;          
+	 width: 100%;
+	 cursor: pointer;
+	 border: 1px solid #2493FF;
+	 overflow: visible;
+	 display: inline-block;
+	 color: #fff;
+	 font: bold 1.4em arial, helvetica;
+	 text-shadow: 0 -1px 0 rgba(0,0,0,.4);         
+	 background-color: #2493ff;
+	 background-image: linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,0)); 
+	 transition: background-color .2s ease-out;
+	 border-radius: 3px;
+	 box-shadow: 0 2px 1px rgba(0, 0, 0, .3),
+				 0 1px 0 rgba(255, 255, 255, .5) inset;                               
+ }
+ 
+ #registro button:hover{
+	 background-color: #7cbfff;
+		 border-color: #7cbfff;
+ }
+ 
+ #registro button:active{
+	 position: relative;
+	 top: 3px;
+	 text-shadow: none;
+	 box-shadow: 0 1px 0 rgba(255, 255, 255, .3) inset;
+ }
+
+ fieldset { 
+	display: block;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-top: 0.35em;
+	padding-bottom: 0.625em;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	border: 2px groove (internal value);
+  }
+   
+  footer{
+  background: #999;
+  margin-top: 10px;
+  
+	position: -webkit-sticky;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #efefef;
+	text-align: center;
+  
+
+  }
+
+#registro fieldset{
+	border: 2px	solid rgb(243, 217, 70);	
+	border-radius:8px;	
+	
+}
+
+
+/*---------------------------------------------------------------------*/
+h1 {
+	color:rgb(31, 133, 61);
+	font-family: serif;
+	font-size: 200%;
+	text-align: center;
+  
+  }
+main 
+{
+text-align: center;
+position: -webkit-sticky;
+margin: 25px;
+padding: 15px;
+
+}
+.justificar{
+	text-align: justify;
+	
+	font-family: cursive; 
+	color:rgb(31, 133, 61);
+		
+		
+
+		
+}
+
+.video{
+	position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: inherit;
+
+
+}
+
+.video iframe {
+    position: absolute;
+    top:0;
+    left: 1px;
+    width: 99%;
+    height:99%;
+}
+
+
+

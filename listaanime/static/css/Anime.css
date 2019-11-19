@@ -1,0 +1,129 @@
+.titulo {
+    text-align: center;
+    font-family: serif;
+    
+}
+figure{
+  
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 1em;
+}
+
+.imgre{
+    width: 50%;
+    border-radius: 14px;
+    box-shadow: 0px 0px 30px -5px;
+    margin-left: 25%;
+    margin-right: 25%;
+  
+    
+    
+}
+h2{
+    font-family:serif;
+    color :white;
+    background:  rgb(153, 153, 153);
+    text-align: center;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+h3{
+    font-family:serif;
+    color :white;
+    background:  rgb(153, 153, 153);
+    text-align: center;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+article{
+    padding: 40px;
+    margin: 25px;
+    background: rgb(253, 253, 253);
+    border-radius: 14px;
+    
+    
+    
+    
+}
+.reseña{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.linkani{
+    margin-top: 20px; 
+    text-align: center;
+    padding: 6px;
+    width: 35%;
+    margin-left: 65%;
+    border-radius: 14px;
+    background: rgb(153, 153, 153);
+}
+.clickk{
+    text-align: center;
+    color: white
+
+}
+
+
+.videoo{
+    max-width: 100%;
+    max-height: auto;
+    margin-top: 1px;
+    margin-left:10px;
+    margin-right:10px;
+    
+    border-radius: 10px
+        
+    
+   
+
+}
+
+footer{
+    text-align: center;
+}
+
+
+
+/* estilo estrellas */
+
+
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+}
+
+#form p {
+    text-align: center;
+}
+
+#form label {
+    font-size: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    color: grey;
+}
+
+.clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+    color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+    color: orange;
+}

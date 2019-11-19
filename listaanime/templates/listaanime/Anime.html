@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AnimeVF</title> <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'img/icono.png '%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Anime.css'%}" >
+   
+
+
+</head>
+<body >
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark menu-fixed">
+        <a class="navbar-brand" href="{% url 'index'%}">
+          <img src="{% static 'img/corazon.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+          ANIMEVF
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <div class="navbar-nav mr-auto ml-auto text-center">
+            {% if user.is_anonymous %} 
+            <li><a href="{% url 'login' %}" class="item-link">Iniciar Sesion</a></li>
+            <li><a href="{% url 'signup' %}" class="item-link">Registrate</a></li>       
+            {% endif %} 
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link active" href="{% url 'index'%}">Inicio</a>
+            <a class="nav-item nav-link" href="{% url 'anime_list'%}">Anime</a>
+            <a class="nav-item nav-link" href="{% url 'manga_list'%}">Mangas</a>
+            <a href="{% url 'listaAnimes' %}" class="nav-item nav-link">Lista Anime</a>
+            <a class="nav-item nav-link" href="{% url 'galeria_list'%}">Wallpapers</a>
+            <a href="{% url 'logout' %}" class="nav-item nav-link">Cerrar Sesion</a>
+            {% endif %} 
+            {% if user.is_superuser %}
+            <a href="{% url 'registroAnime' %}" class="nav-item nav-link">Registrar Anime</a>
+            <a href="/admin/login/?next=/admin/" class="nav-item nav-link">Administracion</a>
+            {% endif %}  
+                      
+          </div>
+        </div>
+        
+      </nav>
+
+
+    <div>
+      <H2 class="titulo"> Reseña de Animes </H1>
+       
+    </div>
+
+  <section class="contai">
+   <article> <H3>One piece</H3>
+    <figure><img  class="imgre"  src="{% static 'img/personajes-one-piece.jpg' %}" ></figure>
+    <form>
+        <p class="clasificacion">
+          
+          <input id="radio1" type="radio" name="estrellas" value="5">
+          <label for="radio1">★</label>
+          <input id="radio2" type="radio" name="estrellas" value="4">
+          <label for="radio2">★</label>
+          <input id="radio3" type="radio" name="estrellas" value="3">
+          <label for="radio3">★</label>
+          <input id="radio4" type="radio" name="estrellas" value="2">
+          <label for="radio4">★</label>
+          <input id="radio5" type="radio" name="estrellas" value="1">
+          <label for="radio5">★</label>
+          acifisalC
+        </p>
+      </form>
+
+    <div>
+      <div style="float: left;">
+      <iframe class="videoo" width="560" height="310" src="https://www.youtube.com/embed/l_98K4_6UQ0"  frameborder="0" allow="accelerometer; 
+        autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="reseña"> El conocido como Rey de los Piratas, Gol D. Roger, declaró antes de ser ejecutado que su tesoro, el One Piece, se encontraba oculto en algún lugar de Grand Line. Tras sus sorprendentes palabras dio comienzo la Era Pirata. Los mares se llenaron de barcos piratas que partían con el objetivo de encontrar el conocido botín.
+
+      One-Piece-03
+      
+      Veintidós años después de este hecho, la trama nos presenta a Monkey D. Luffy, un alocado joven de fuertes convicciones que parte con la esperanza de conseguir el One Piece y convertirse así en el nuevo Rey de los Piratas. Poco a poco, este chico, que guarda un gomoso secreto, irá reclutando miembros de todo tipo a su tripulación. Una tripulación que pronto será conocida como la Banda de Sombrero de Paja.
+      
+      Juntos, Luffy y sus nakamas viajarán por todo el mundo visitando islas en la que los peligros les acecharán en cada esquina. Y es que lograr la corona de monarca de los piratas no será algo fácil de conseguir. La Marina y el resto de bandas rivales son cosas que nuestros protagonistas deberán tener muy en cuenta si quieren avanzar para lograr hacer realidad sus preciados sueños.
+     </p>
+    </div> 
+     
+
+     
+     
+     <p class="linkani"><a class="clickk" href="https://animeflv.net/anime/5495/one-piece-tv" >Click para ver capitulos </a></p>
+    </article>
+    
+
+   
+      
+  <article> <H3>boku no hero academia</H3>
+    <figure > <img class="imgre" src="{% static 'img/bokunohero.jpg' %}" ></figure>
+    <form>
+      
+     
+         </p>
+        <p class="clasificacion">
+          <input id="radio1" type="radio" name="estrellas" value="5">
+          <label for="radio1">★</label>
+          <input id="radio2" type="radio" name="estrellas" value="4">
+          <label for="radio2">★</label>
+          <input id="radio3" type="radio" name="estrellas" value="3">
+          <label for="radio3">★</label>
+          <input id="radio4" type="radio" name="estrellas" value="2">
+          <label for="radio4">★</label>
+          <input id="radio5" type="radio" name="estrellas" value="1">
+          <label for="radio5">★</label>
+          
+          acifisalC
+        </p>
+      </form>
+      
+    <div>
+      
+      <div style="float: right;">
+          <iframe class="videoo" width="560" height="315" src="https://www.youtube.com/embed/PRjWwLV_Xuo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="reseña">
+          Se trata de uno de los shonen revelación del momento, capaz seguro de tomar el relevo de obras como Naruto o Bleach, recientemente finalizadas. La obra comenzó a publicarse en las páginas de la Shonen Jump en 2014 y permanece abierta su publicación con 14 volúmenes hasta el momento en Japón. Además, fue nominada en la octava edición de los premios Manga Taisho Award.
+      </p>
+    <p class="reseña">
+        Boku no Hero Academia es un manga de acción, fantasía y ciencia ficción escrito e ilustrado por Kohei Horikoshi, autor de mangas como Oumagadoki Doubutsuen y Sensei no Barrage. Se nota la presencia de estos, tanto en el diseño de los personajes como en la historia. Horikoshi siempre apuesta por seres del más allá, pero en esta ocasión son los humanos quienes acaparan el protagonismo. Sin duda, estamos ante uno de los mangas más prometedores de los últimos años. Os dejamos con nuestra reseña de Boku no Hero Academia #1.
+
+    </p>
+    </div>
+    <p class="linkani"><a class="clickk" href="https://animeflv.net/anime/5148/boku-no-hero-academia-2016">Click para ver capitulos </a></p>
+  </article>
+    
+  
+  <article> <H3>kimetsu no yaiba</H3>
+    <figure><img  class="imgre" src="{% static 'img/kimetsu.jpg' %}" ></figure>  
+    <form>
+        <p class="clasificacion">
+          <input id="radio1" type="radio" name="estrellas" value="5">
+          <label for="radio1">★</label>
+          <input id="radio2" type="radio" name="estrellas" value="4">
+          <label for="radio2">★</label>
+          <input id="radio3" type="radio" name="estrellas" value="3">
+          <label for="radio3">★</label>
+          <input id="radio4" type="radio" name="estrellas" value="2">
+          <label for="radio4">★</label>
+          <input id="radio5" type="radio" name="estrellas" value="1">
+          <label for="radio5">★</label>
+          acifisalC
+        </p>
+      </form>
+  <div>
+    <div style="float: left;">
+        <iframe class="videoo" width="560" height="315" src="https://www.youtube.com/embed/A7sjO7KQ8EM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="reseña">Porque Ufotable, estudio a cargo reconocido por anteriores trabajos como Fate/Zero, establece el estándar mínimo en «buena adaptación». De ahí para arriba. Logra captar a la perfección la esencia de Koyoharu Gotouge, emular ese tono de tintes oscuros tan característico y potenciarlo. Magnifica el trabajo de la autora de Kimetsu no Yaiba, hazaña de la que pocos estudios pueden presumir a día de hoy. Lo hace desde el más profundo respeto hacia el material original, tomándose su tiempo para asimilarlo, degustarlo y digerirlo. Para entender ese sangriento baile de espadas y demonios. El sentimiento del amor, la pérdida y la venganza. El valor de la vida, pero también el de la muerte. El destello del acero de dos 
+      katanas chocando entre sí; la imparable danza que brinda oportunidad y muerte.
+    </p>
+  </div>
+   
+    <p class="linkani"><a class="clickk" href="https://animeflv.net/anime/5557/kimetsu-no-yaiba">Click para ver capitulos </a></p>
+  </article>
+    
+
+  
+  <article ><H3>Hunter x Hunter (2011)</H3>
+    <figure><img  class="imgre" src="{% static 'img/huntex.jpg' %}" ></figure>
+    <form>
+        <p class="clasificacion">
+          <input id="radio1" type="radio" name="estrellas" value="5">
+          <label for="radio1">★</label>
+          <input id="radio2" type="radio" name="estrellas" value="4">
+          <label for="radio2">★</label>
+          <input id="radio3" type="radio" name="estrellas" value="3">
+          <label for="radio3">★</label>
+          <input id="radio4" type="radio" name="estrellas" value="2">
+          <label for="radio4">★</label>
+          <input id="radio5" type="radio" name="estrellas" value="1">
+          <label for="radio5">★</label>
+          acifisalC
+        </p>
+      </form>
+  <div> 
+      <div style="float: right;">
+          <iframe class="videoo" width="560" height="315" src="https://www.youtube.com/embed/F_YR1T_MdCI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div> 
+      <p class="reseña">Hunter x Hunter resumido en una palabra es épico, un gran shonen que tiene una trama, personajes, banda sonora, animación y momentos épicos, tristes,
+       dramáticos y divertidos que no tiene nada que envidiar a otros shonen tan famosos como One Piece o Naruto. Mi historia con este anime se remonta al Boom que este hizo en el arco de las hormigas quimera, 
+       justamente hace un año, empecé a ver Hunter x Hunter y que puedo decir... No me convenció, tenía un aire infantil, la historia no era muy original, me parecía un shonen normal pero eso solo fue el comienzo. Este anime tiene un mal arranque, osea, sus primeras sagas no me hicieron emocionar, simplemente entretenerme, misterio y batallas, luego llega la familia Zoldyck y aunque fue un arco corto bastó para demostrar la gran familia de asesinos, ¿Pero que pasa? Que aunque me gustará todavía no le había cogido la emoción a la serie y llegó la saga más aburrida de todas por toda la información que tiene y las partes de entrenamiento que abundan en el arco, la torre del cielo, y al día de hoy, semana en la que se acabó este anime, 
+       es uno de mis favoritos y lo considero de los mejores shonen que existen.
+      </p>
+  </div>
+    
+    <p class="linkani"><a class="clickk" href="https://animeflv.net/anime/4130/hunter-x-hunter-2011">Click para ver capitulos </a></p>
+ 
+    </section>
+ </article>
+    
+    
+    <footer>
+        <P> Contacto: <a href="tel/+569123456789">+569123456789</a></P>
+		<P> Email : <a href="mailto:duoc@hotmail.com">duoc@hotmail.com</a>
+            </P>
+            <p>Derechos Reservados &copy; / Vicente Liberona - Fabian Villagra   </p>
+    </footer>
+
+
+
+
+
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    
+</body>
+</html>

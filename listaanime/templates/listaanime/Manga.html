@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AnimeVF</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/manga.css' %}"> 
+       
+    <link rel="icon" type="image/png" href="{% static 'img/icono.png '%}">
+
+
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark menu-fixed">
+        <a class="navbar-brand" href="{% url 'index'%}">
+          <img src="{% static 'img/corazon.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+          ANIMEVF
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <div class="navbar-nav mr-auto ml-auto text-center">
+            {% if user.is_anonymous %} 
+            <li><a href="{% url 'login' %}" class="item-link">Iniciar Sesion</a></li>
+            <li><a href="{% url 'signup' %}" class="item-link">Registrate</a></li>       
+            {% endif %} 
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link active" href="{% url 'index'%}">Inicio</a>
+            <a class="nav-item nav-link" href="{% url 'anime_list'%}">Anime</a>
+            <a class="nav-item nav-link" href="{% url 'manga_list'%}">Mangas</a>
+            <a href="{% url 'listaAnimes' %}" class="nav-item nav-link">Lista Anime</a>
+            <a class="nav-item nav-link" href="{% url 'galeria_list'%}">Wallpapers</a>
+            <a href="{% url 'logout' %}" class="nav-item nav-link">Cerrar Sesion</a>
+            {% endif %} 
+            {% if user.is_superuser %}
+            <a href="{% url 'registroAnime' %}" class="nav-item nav-link">Registrar Anime</a>
+            <a href="/admin/login/?next=/admin/" class="nav-item nav-link">Administracion</a>
+            {% endif %}  
+                      
+          </div>
+        </div>
+        
+      </nav>
+
+
+      <div>
+          <h2 class="titulo"> Mangas</h2>
+           
+        </div>
+      <div class="container-manga">
+          
+          <div class="mangakas">
+              <article class="col">
+                <p> Manga de Naruto</p>
+                <img src="{% static 'img/portadanaruto.jpg'%}" alt="imgportadanaruto" class="img">
+                <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-173467/chapter/mrs-chapter-173469">Click para ver capitulos </a></p>
+              </article>
+              <article class="col">
+                <p> Manga de One Piece</p>
+                <img src="{% static 'img/portadaonepiece.jpg' %}" alt="imgbkn" class="img">
+                <p class="linkani"><a class="clickk" href="https://mangalibre.com/manga/one-piece/223/chapter-0#/!page0">Click para ver capitulos </a></p>
+              </article>
+              <article class="col">
+                <p> Manga de HxH 2011</p>
+                <img src="{% static 'img/portadahxh.jpg' %}" alt="imghxh" class="img">
+                <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-111005/chapter/mrs-chapter-111006">Click para ver capitulos </a></p>
+              </article>
+              <article class="col">
+                  <p> Manga de Kimetsu no Yaiba</p>
+                  <img src="{% static 'img/portadakimetsu.jpg' %}" alt="imghxh" class="img">
+                  <p class="linkani"><a class="clickk" href="https://mangalibre.com/manga/kimetsu-no-yaiba/1498/chapter-155#/!page0">Click para ver capitulos </a></p>
+              </article>
+              <article class="col">
+                  <p> Manga de Haikyuu!!</p>
+                  <img src="{% static 'img/portadahaikyu.jpg' %}" alt="imghxh" class="img">
+                  <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-92499/chapter/mrs-chapter-92500">Click para ver capitulos </a></p>
+              </article>
+              <article class="col">
+                  <p> Manga de Given</p>
+                  <img src="{% static 'img/portadagiven.jpg' %}" alt="imghxh" class="img">
+                  <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-85614/chapter/mrs-chapter-85615">Click para ver capitulos </a></p>
+  
+                </article>
+                <article class="col">
+                    <p> Manga de JoJos</p>
+                    <img src="{% static 'img/portadajojo.jpg' %}" alt="imghxh" class="img">
+                    <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-121862/chapter/mrs-chapter-121863">Click para ver capitulos </a></p>
+    
+                </article>
+                <article class="col">
+                    <p> Manga de Artudo Vidal</p>
+                    <img src="{% static 'img/portadavidal.jpg' %}" alt="imghxh" class="img">
+                    <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-135622/chapter/mrs-chapter-100022218">Click para ver capitulos </a></p>
+                </article>
+                <article class="col">
+                    <p> Manga de SNK</p>
+                    <img src="{% static 'img/portadasnk.jpg' %}" alt="imghxh" class="img">
+                    <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-222870/chapter/mrs-chapter-222871">Click para ver capitulos </a></p>
+                </article>
+                <article class="col">
+                    <p> Manga de DBZ</p>
+                    <img src="{% static 'img/portadadragon.jpg' %}" alt="imghxh" class="img">
+                    <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-100145153/chapter/mrs-chapter-100145199">Click para ver capitulos </a></p>
+                </article>
+                <article class="col">
+                    <p> Manga de SC</p>
+                    <img src="{% static 'img/portadasupercampeones.jpg' %}" alt="imghxh" class="img">
+                    <p class="linkani"><a class="clickk" href="https://www.taringa.net/+imagenes/super-campeones-manga-comic-capitulo-1_gdn5j">Click para ver capitulos </a></p>
+                </article>
+                <article class="col">
+                    <p> Manga de YuGi Oh</p>
+                    <img src="{% static 'img/portadayugi.jpg' %}" alt="imghxh" class="img">
+                    <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-282329/chapter/mrs-chapter-282330">Click para ver capitulos </a></p>
+                </article>
+
+                <article class="col">
+                    <p> Manga de Pokemon</p>
+                    <img src="{% static 'img/portadapokemon.jpg' %}" alt="imghxh" class="img">
+                    <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-200029151/chapter/mrs-chapter-200030504">Click para ver capitulos </a></p>
+                </article>
+
+                <article class="col">
+                    <p> Manga de Noragami</p>
+                    <img src="{% static 'img/portadanoragami.jpg' %}" alt="imghxh" class="img">
+                    <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-179689/chapter/mrs-chapter-179691">Click para ver capitulos </a></p>
+                </article>
+
+                <article class="col">
+                    <p> Manga de Chobits</p>
+                    <img src="{% static 'img/portadachobits.jpg' %}" alt="imghxh" class="img">
+                    <p class="linkani"><a class="clickk" href="https://mangarock.com/manga/mrs-serie-43800/chapter/mrs-chapter-43801">Click para ver capitulos </a></p>
+                </article>
+                
+
+              </div>
+        </div>
+    <footer>
+        <P> Contacto: <a href="tel/+569123456789">+569123456789</a></P>
+		<P> Email : <a href="mailto:duoc@hotmail.com">duoc@hotmail.com</a>
+                </P>
+                <p>Derechos Reservados &copy; / Vicente Liberona - Fabian Villagra   </p>
+    </footer>
+
+
+
+
+
+    <script src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    
+</body>
+</html>

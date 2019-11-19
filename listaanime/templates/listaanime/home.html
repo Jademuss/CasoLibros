@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Registrate</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="{% static 'styles/menu.css' %}"/>
+                <link rel="stylesheet" href="{% static 'styles/main.css' %}"/>
+                <link href="https://file.myfontastic.com/F3EYbr2mgJRrppNqNEXyEM/icons.css" rel="stylesheet">
+        </head>
+        <body>
+                        <div class="menu-container">
+                                        <a id="ref" href="{% url 'index' %}"><span class="icon-shop"></span></a>           
+                            
+                                        <label id="btn-menu" class="icon-bars"></label>
+                                        <nav id="navegador">
+                                            <ul>
+                                                {% if user.is_authenticated %}
+                                                        <li><a href="{% url 'logout' %}" class="item-link">Cerrar Sesion</a></li>
+                                                {% else %}
+                                                        <li><a href="{% url 'signup' %}" class="item-link">Registrate</a></li>
+                                                        <li><a href="{% url 'login' %}" class="item-link">Iniciar Sesion</a></li>
+                                                {% endif %}
+                                            </ul>
+                                        </nav>
+                                    </div>
+        <script src="{% static 'js/javamenu.js' %}"></script>
+        </body>        
+</html>

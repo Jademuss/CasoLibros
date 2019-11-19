@@ -25,7 +25,7 @@ SECRET_KEY = 'n+ei-6j&2@z6yz$t+dgb_1%w)6#+9)et5+85fw*&ypa)!*szs3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com','http://exmnasus.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'listacompra',
+    'listaanime',
     'rest_framework',
     'corsheaders',
     'users',
